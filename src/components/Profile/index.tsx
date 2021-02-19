@@ -3,7 +3,7 @@ import { ProfileStyle, TitleStyle, InfoSectionStyle, SubtitleStyle, StatusIndica
 export type ProfileProps = {
     image: string,
     name: string,
-    status: string,
+    status: 'Alive' | 'Dead' | 'unknown',
     species: string
 }
 
@@ -11,10 +11,10 @@ const Profile = ({ image, name, status, species }: ProfileProps) => {
 
     return (
         <ProfileStyle>
-            <img src={image} width='100%' height='200' />
+            <img src={image} width='100%' height='200' alt={name} />
             <InfoSectionStyle>
                 <TitleStyle>{name}</TitleStyle>
-                <SubtitleStyle> <StatusIndicatorStyle /> {status} - {species} </SubtitleStyle>
+                <SubtitleStyle> <StatusIndicatorStyle status={status} /> {status} - {species} </SubtitleStyle>
             </InfoSectionStyle>
         </ProfileStyle>
     )
