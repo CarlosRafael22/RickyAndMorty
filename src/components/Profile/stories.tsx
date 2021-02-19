@@ -13,5 +13,8 @@ Default.args = {
     image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
     name: 'Rick and Morry',
     status: 'Dead',
-    species: 'Alien'
+    species: 'Alien',
+    origin: 'Earth',
+    location: 'Gaia',
+    number_of_episodes: 13
 }
