@@ -10,6 +10,10 @@ describe('<Profile />', () => {
         expect(screen.getByText(new RegExp(Default.args.status, "i"))).toBeInTheDocument()
         expect(screen.getByText(new RegExp(Default.args.species, "i"))).toBeInTheDocument()
         expect(screen.getByAltText(Default.args.name).src).toContain(Default.args.image)
+        expect(screen.getByText(new RegExp(Default.args.origin, "i"))).toBeInTheDocument()
+        expect(screen.getByText(new RegExp(Default.args.location, "i"))).toBeInTheDocument()
+        const episodesText = `Episodes it appeared in: ${Default.args?.number_of_episodes}`
+        expect(screen.getByText(new RegExp(episodesText, "i"))).toBeInTheDocument()
     })
 
     it('should render the status circle color accordingly', () => {
