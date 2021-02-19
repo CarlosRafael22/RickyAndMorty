@@ -14,7 +14,7 @@ const Profile = ({ image, name, status, species }: ProfileProps) => {
             <img src={image} width='100%' height='200' alt={name} />
             <InfoSectionStyle>
                 <TitleStyle>{name}</TitleStyle>
-                <SubtitleStyle> <StatusIndicatorStyle status={status} /> {status} - {species} </SubtitleStyle>
+                <SubtitleStyle> <StatusIndicatorStyle status={status} data-testid={'status'} /> {status} - {species} </SubtitleStyle>
             </InfoSectionStyle>
         </ProfileStyle>
     )
