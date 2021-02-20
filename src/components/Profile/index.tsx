@@ -1,4 +1,4 @@
-import { ProfileStyle, TitleStyle, InfoSectionStyle, SubtitleStyle, StatusIndicatorStyle, LocationSectionStyle } from './styles'
+import { ProfileStyle, TitleStyle, InfoSectionStyle, SubtitleStyle, StatusIndicatorStyle, LocationSectionStyle, ProfileImage } from './styles'
 
 export type ProfileProps = {
     image: string,
@@ -14,7 +14,7 @@ const Profile = ({ image, name, status, species, location, origin, number_of_epi
 
     return (
         <ProfileStyle>
-            <img src={image} width='100%' height='200' alt={name} />
+            <ProfileImage src={image} alt={name} />
             <InfoSectionStyle>
                 <TitleStyle>{name}</TitleStyle>
                 <SubtitleStyle> <StatusIndicatorStyle status={status} data-testid={'status'} /> {status} - {species} </SubtitleStyle>

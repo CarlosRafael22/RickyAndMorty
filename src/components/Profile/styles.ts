@@ -3,10 +3,16 @@ import { ProfileProps } from '.'
 
 export const ProfileStyle = styled.article`
     color: #fff;
-    border-radius: 8px;
+    border-radius: 0.5rem;
     width: 20rem;
-    height: 25rem;
     background-color: hsla(0,0%,0%,0.8);
+    margin: 1rem;
+`
+
+export const ProfileImage = styled.img`
+    width: 100%;
+    height: 14rem;
+    border-radius: 0.5rem 0.5rem 0 0;
 `
 
 export const InfoSectionStyle = styled.div`
