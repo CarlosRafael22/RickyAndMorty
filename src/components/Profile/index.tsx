@@ -7,10 +7,10 @@ export type ProfileProps = {
     species: string,
     location: string,
     origin: string,
-    number_of_episodes: number
+    numberOfEpisodes: number
 }
 
-const Profile = ({ image, name, status, species, location, origin, number_of_episodes }: ProfileProps) => {
+const Profile = ({ image, name, status, species, location, origin, numberOfEpisodes }: ProfileProps) => {
 
     return (
         <ProfileStyle>
@@ -24,7 +24,7 @@ const Profile = ({ image, name, status, species, location, origin, number_of_epi
                 <SubtitleStyle>LOCATION: {location}</SubtitleStyle>
             </LocationSectionStyle>
             <InfoSectionStyle>
-                <SubtitleStyle>Episodes it appeared in: {number_of_episodes} </SubtitleStyle>
+                <SubtitleStyle>Episodes it appeared in: {numberOfEpisodes} </SubtitleStyle>
             </InfoSectionStyle>
         </ProfileStyle>
     )

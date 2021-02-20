@@ -16,5 +16,5 @@ Default.args = {
     species: 'Alien',
     origin: 'Earth',
     location: 'Gaia',
-    number_of_episodes: 13
+    numberOfEpisodes: 13
 }
