@@ -1,7 +1,9 @@
+import { useRouter } from 'next/router'
 import { ProfileStyle, InfoSectionStyle, SubtitleStyle, LocationSectionStyle } from './styles'
 import ProfileHeader from '../ProfileHeader'
 
 export type ProfileCardProps = {
+    id: number,
     image: string,
     name: string,
     status: 'Alive' | 'Dead' | 'unknown',
@@ -11,11 +13,16 @@ export type ProfileCardProps = {
     numberOfEpisodes: number
 }
 
-const Profile = ({ image, name, status, species, location, origin, numberOfEpisodes }: ProfileCardProps) => {
+const Profile = ({ id, image, name, status, species, location, origin, numberOfEpisodes }: ProfileCardProps) => {
+    const router = useRouter()
     const profileHeaderProps = { image, name, status, species, showAs: 'card' as const }
 
+    const goToProfilePage = () => {
+        router.push(`profile/${id}`)
+    }
+
     return (
-        <ProfileStyle>
+        <ProfileStyle onClick={goToProfilePage}>
             <ProfileHeader {...profileHeaderProps} />
             <LocationSectionStyle>
                 <SubtitleStyle>ORIGIN: {origin}</SubtitleStyle>

@@ -6,6 +6,7 @@ export const ProfileStyle = styled.article`
     width: 20rem;
     background-color: hsla(0,0%,0%,0.8);
     margin: 1rem;
+    cursor: pointer;
 `
 
 export const TitleStyle = styled.h2`
