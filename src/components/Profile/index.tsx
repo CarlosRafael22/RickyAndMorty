@@ -1,4 +1,5 @@
-import { ProfileStyle, TitleStyle, InfoSectionStyle, SubtitleStyle, StatusIndicatorStyle, LocationSectionStyle, ProfileImage } from './styles'
+import { ProfileStyle, InfoSectionStyle, SubtitleStyle, LocationSectionStyle } from './styles'
+import ProfileHeader from '../ProfileHeader'
 
 export type ProfileProps = {
     image: string,
@@ -11,14 +12,11 @@ export type ProfileProps = {
 }
 
 const Profile = ({ image, name, status, species, location, origin, numberOfEpisodes }: ProfileProps) => {
+    const profileHeaderProps = { image, name, status, species, showAs: 'card' as const }
 
     return (
         <ProfileStyle>
-            <ProfileImage src={image} alt={name} />
-            <InfoSectionStyle>
-                <TitleStyle>{name}</TitleStyle>
-                <SubtitleStyle> <StatusIndicatorStyle status={status} data-testid={'status'} /> {status} - {species} </SubtitleStyle>
-            </InfoSectionStyle>
+            <ProfileHeader {...profileHeaderProps} />
             <LocationSectionStyle>
                 <SubtitleStyle>ORIGIN: {origin}</SubtitleStyle>
                 <SubtitleStyle>LOCATION: {location}</SubtitleStyle>
