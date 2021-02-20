@@ -8,8 +8,14 @@ export type ProfileCardProps = {
     name: string,
     status: 'Alive' | 'Dead' | 'unknown',
     species: string,
-    location: string,
-    origin: string,
+    location: {
+        name: string,
+        url: string
+    },
+    origin: {
+        name: string,
+        url: string
+    },
     numberOfEpisodes: number
 }
 
@@ -25,8 +31,8 @@ const Profile = ({ id, image, name, status, species, location, origin, numberOfE
         <ProfileStyle onClick={goToProfilePage}>
             <ProfileHeader {...profileHeaderProps} />
             <LocationSectionStyle>
-                <SubtitleStyle>ORIGIN: {origin}</SubtitleStyle>
-                <SubtitleStyle>LOCATION: {location}</SubtitleStyle>
+                <SubtitleStyle>ORIGIN: {origin.name}</SubtitleStyle>
+                <SubtitleStyle>LOCATION: {location.name}</SubtitleStyle>
             </LocationSectionStyle>
             <InfoSectionStyle>
                 <SubtitleStyle>Episodes it appeared in: {numberOfEpisodes} </SubtitleStyle>

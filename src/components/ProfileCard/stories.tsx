@@ -14,7 +14,13 @@ Default.args = {
     name: 'Rick and Morry',
     status: 'Dead',
     species: 'Alien',
-    origin: 'Earth',
-    location: 'Gaia',
+    origin: {
+        name: 'Earth',
+        url: 'https://rickandmortyapi.com/api/location/20'
+    },
+    location: {
+        name: 'Gaia',
+        url: 'https://rickandmortyapi.com/api/location/20'
+    },
     numberOfEpisodes: 13
 }
