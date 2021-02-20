@@ -9,7 +9,7 @@ const ProfileSection = ({ characters }: ProfileSectionProps) => {
 
     return (
         <ProfileSectionStyle>
-            {characters.map(character => <Profile {...character}  />)}
+            {characters.map((character, index) => <Profile {...character} key={`profile_${index}`}  />)}
         </ProfileSectionStyle>
     )
 }
