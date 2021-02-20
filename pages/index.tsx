@@ -7,6 +7,7 @@ const Home = () => {
 
   const parseCharacters = (characters: any[]): ProfileCardProps[] => {
     return characters.map(character => ({
+      id: character.id,
       image: character.image,
       name: character.name,
       status: character.status,
