@@ -13,7 +13,7 @@ const Home = () => {
       species: character.species,
       location: character.location.name,
       origin: character.origin.name,
-      number_of_episodes: character.episode.length
+      numberOfEpisodes: character.episode.length
     }))
   }
 
