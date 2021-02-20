@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
-import { ProfileProps } from '../src/components/Profile'
-import ProfileSection from '../src/components/ProfileSection'
+import { ProfileCardProps } from '../src/components/ProfileCard'
+import ProfilesSection from '../src/components/ProfilesSection'
 
 const Home = () => {
-  const [characters, setCharacters] = useState<ProfileProps[]>([])
+  const [characters, setCharacters] = useState<ProfileCardProps[]>([])
 
-  const parseCharacters = (characters: any[]): ProfileProps[] => {
+  const parseCharacters = (characters: any[]): ProfileCardProps[] => {
     return characters.map(character => ({
       image: character.image,
       name: character.name,
@@ -36,7 +36,7 @@ const Home = () => {
     {
       (characters.length === 0) ? <h2>Loading</h2>
       : (
-        <ProfileSection characters={characters} />        
+        <ProfilesSection characters={characters} />        
       )
     }
     </>

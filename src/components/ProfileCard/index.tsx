@@ -1,7 +1,7 @@
 import { ProfileStyle, InfoSectionStyle, SubtitleStyle, LocationSectionStyle } from './styles'
 import ProfileHeader from '../ProfileHeader'
 
-export type ProfileProps = {
+export type ProfileCardProps = {
     image: string,
     name: string,
     status: 'Alive' | 'Dead' | 'unknown',
@@ -11,7 +11,7 @@ export type ProfileProps = {
     numberOfEpisodes: number
 }
 
-const Profile = ({ image, name, status, species, location, origin, numberOfEpisodes }: ProfileProps) => {
+const Profile = ({ image, name, status, species, location, origin, numberOfEpisodes }: ProfileCardProps) => {
     const profileHeaderProps = { image, name, status, species, showAs: 'card' as const }
 
     return (

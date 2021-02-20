@@ -1,12 +1,12 @@
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import { Default } from './stories'
-import { ProfileSectionProps } from '.'
+import { ProfilesSectionProps } from '.'
 
 
 describe('<ProfileSection />', () => {
     it('should render all items passed in characters props', () => {
-        const props = Default.args as ProfileSectionProps
+        const props = Default.args as ProfilesSectionProps
         render(<Default {...props} />)
 
         const numberOfProfiles = props.characters.length

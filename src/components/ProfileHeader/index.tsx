@@ -1,7 +1,7 @@
-import { ProfileProps } from '../Profile'
+import { ProfileCardProps } from '../ProfileCard'
 import { HeaderWrapper, ProfileImage, InfoSectionStyle, TitleStyle, SubtitleStyle, StatusIndicatorStyle } from './styles'
 
-export type ProfileHeaderProps = Pick<ProfileProps, 'image' | 'name' | 'status' | 'species'> & {
+export type ProfileHeaderProps = Pick<ProfileCardProps, 'image' | 'name' | 'status' | 'species'> & {
     showAs: 'page' | 'card'
 }
 

@@ -1,9 +1,9 @@
-import { ProfileProps } from '../Profile'
+import { ProfileCardProps } from '../ProfileCard'
 import { PageContainer } from './styles'
 import ProfileHeader from '../ProfileHeader'
 
 export type ProfilePageProps = {
-    character: ProfileProps
+    character: ProfileCardProps
 }
 
 const ProfilePage = ({ character }: ProfilePageProps) => {

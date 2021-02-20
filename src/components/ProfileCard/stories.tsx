@@ -1,12 +1,12 @@
 import { Story, Meta } from '@storybook/react'
-import Profile, { ProfileProps } from '.'
+import ProfileCard, { ProfileCardProps } from '.'
 
 export default {
-    title: 'Profile',
-    component: Profile
+    title: 'ProfileCard',
+    component: ProfileCard
 } as Meta
 
-const Template: Story<ProfileProps> = (args: ProfileProps) => <Profile {...args} />
+const Template: Story<ProfileCardProps> = (args: ProfileCardProps) => <ProfileCard {...args} />
 
 export const Default = Template.bind({})
 Default.args = {

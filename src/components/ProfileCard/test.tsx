@@ -1,11 +1,11 @@
 import { render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom'
 import { Default } from './stories'
-import { ProfileProps } from '.'
+import { ProfileCardProps } from '.'
 
 describe('<Profile />', () => {
     it('should render all props passed', () => {
-        const props = Default.args as ProfileProps
+        const props = Default.args as ProfileCardProps
         render(<Default {...props} />)
 
         expect(screen.getByText(props.name!)).toBeInTheDocument()
