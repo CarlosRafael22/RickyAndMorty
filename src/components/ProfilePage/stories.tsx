@@ -16,11 +16,36 @@ const headerProps = {
     species: 'Alien'
 }
 
+const location = {
+    title: 'Location',
+    name: 'Earth',
+    type: 'Planet',
+    dimension: '1st',
+    numberOfResidents: 70
+}
+
+const origin = {
+    title: 'Origin',
+    name: 'Earth',
+    type: 'Planet',
+    dimension: '1st',
+    numberOfResidents: 70
+}
+
 Default.args = { 
     character: {
         ...headerProps,
-        origin: 'Earth',
-        location: 'Gaia',
+        id: 13,
+        origin: {
+            name: 'Gaia',
+            url: 'https://rickandmortyapi.com/api/location/20'
+        },
+        location: {
+            name: 'Gaia',
+            url: 'https://rickandmortyapi.com/api/location/20'
+        },
         numberOfEpisodes: 13
-    }
+    },
+    location,
+    origin
  }
