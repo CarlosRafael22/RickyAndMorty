@@ -2,14 +2,16 @@ import { ProfileCardProps } from '../ProfileCard'
 import { PageContainer } from './styles'
 import ProfileHeader from '../ProfileHeader'
 import LocationSection, { LocationSectionProps } from '../LocationSection'
+import EpisodesSection, { Episode } from '../EpisodesSection'
 
 export type ProfilePageProps = {
     character: ProfileCardProps,
     location: LocationSectionProps,
-    origin: LocationSectionProps
+    origin: LocationSectionProps,
+    episodes: Episode[]
 }
 
-const ProfilePage = ({ character, location, origin }: ProfilePageProps) => {
+const ProfilePage = ({ character, location, origin, episodes }: ProfilePageProps) => {
     const { image, name, status, species } = character
     const profileHeaderProps = { image, name, status, species, showAs: 'page' as const }
 
@@ -18,6 +20,7 @@ const ProfilePage = ({ character, location, origin }: ProfilePageProps) => {
             <ProfileHeader {...profileHeaderProps} />
             <LocationSection {...origin} />
             <LocationSection {...location} />
+            <EpisodesSection episodes={episodes} />
         </PageContainer>
     )
 }
