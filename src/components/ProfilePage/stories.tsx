@@ -1,5 +1,6 @@
 import { Story, Meta } from '@storybook/react'
 import ProfilePage, { ProfilePageProps }  from '.'
+import { Default as DefaultEpisodesSection } from '../EpisodesSection/stories'
 
 export default {
     title: 'ProfilePage',
@@ -26,10 +27,10 @@ const location = {
 
 const origin = {
     title: 'Origin',
-    name: 'Earth',
-    type: 'Planet',
-    dimension: '1st',
-    numberOfResidents: 70
+    name: 'Citadel of Ricks',
+    type: 'Space station',
+    dimension: 'unknown',
+    numberOfResidents: 5
 }
 
 Default.args = { 
@@ -47,5 +48,6 @@ Default.args = {
         numberOfEpisodes: 13
     },
     location,
-    origin
+    origin,
+    episodes: DefaultEpisodesSection.args?.episodes
  }
