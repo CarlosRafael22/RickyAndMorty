@@ -29,6 +29,7 @@ export const EpisodeContainer = styled.div`
     background-color: #f6f6f5;
     margin: 0.5rem 0;
     border-radius: 0.5rem;
+    color: black;
 `
 
 export const InfoSpan = styled.span`

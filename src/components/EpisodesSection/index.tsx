@@ -1,6 +1,6 @@
 import { EpisodesSectionStyle, EpisodesHeader, EpisodesInfoSectionStyle, EpisodeInfo, EpisodeName, EpisodeContainer, InfoSpan } from './styles'
 
-type Episode = {
+export type Episode = {
     name: string,
     episode: string,
     airDate: string
