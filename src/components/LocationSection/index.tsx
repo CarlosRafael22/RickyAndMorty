@@ -5,7 +5,7 @@ export type LocationSectionProps = {
     name: string,
     type: string,
     dimension: string,
-    numberOfResidents: number
+    numberOfResidents: number | 'unknown'
 }
 
 const LocationSection = ({ title, name, type, dimension, numberOfResidents }: LocationSectionProps) => {
