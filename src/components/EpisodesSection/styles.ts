@@ -35,3 +35,8 @@ export const EpisodeContainer = styled.div`
 export const InfoSpan = styled.span`
     font-weight: 600;
 `
+
+export const HeaderSpan = styled.span`
+    font-weight: 400;
+    font-size: 1rem;
+`
