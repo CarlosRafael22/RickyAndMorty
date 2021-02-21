@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { ProfileCardProps } from '../src/components/ProfileCard'
 import ProfilesSection from '../src/components/ProfilesSection'
 import { requestParsedCharacters } from '../src/utils/requests'
+import Spinner from '../src/components/Spinner'
 
 const Home = () => {
   const [characters, setCharacters] = useState<ProfileCardProps[]>([])
@@ -18,7 +19,7 @@ const Home = () => {
   return (
     <>
     {
-      (characters.length === 0) ? <h2>Loading</h2>
+      (characters.length === 0) ? <Spinner />
       : (
         <ProfilesSection characters={characters} />        
       )
