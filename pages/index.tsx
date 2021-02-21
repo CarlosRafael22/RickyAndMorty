@@ -1,30 +1,14 @@
 import { useEffect, useState } from 'react'
-import { ProfileProps } from '../src/components/Profile'
-import ProfileSection from '../src/components/ProfileSection'
+import { ProfileCardProps } from '../src/components/ProfileCard'
+import ProfilesSection from '../src/components/ProfilesSection'
+import { requestParsedCharacters } from '../src/utils/requests'
 
 const Home = () => {
-  const [characters, setCharacters] = useState<ProfileProps[]>([])
-
-  const parseCharacters = (characters: any[]): ProfileProps[] => {
-    return characters.map(character => ({
-      image: character.image,
-      name: character.name,
-      status: character.status,
-      species: character.species,
-      location: character.location.name,
-      origin: character.origin.name,
-      numberOfEpisodes: character.episode.length
-    }))
-  }
+  const [characters, setCharacters] = useState<ProfileCardProps[]>([])
 
   useEffect(() => {
     const getData = async () => {
-      const response = await fetch('https://rickandmortyapi.com/api/character')
-      console.log(response)
-      const data = await response.json()
-      console.log(data)
-      const parsedCharacters = parseCharacters(data.results)
-      console.log(parsedCharacters.slice(0, 5))
+      const parsedCharacters = await requestParsedCharacters()
       setCharacters(parsedCharacters)
     }
 
@@ -36,7 +20,7 @@ const Home = () => {
     {
       (characters.length === 0) ? <h2>Loading</h2>
       : (
-        <ProfileSection characters={characters} />        
+        <ProfilesSection characters={characters} />        
       )
     }
     </>

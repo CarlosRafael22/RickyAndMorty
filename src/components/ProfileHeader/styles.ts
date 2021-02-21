@@ -1,22 +1,23 @@
 import styled, { css } from 'styled-components'
-import { ProfileProps } from '.'
+import { ProfileHeaderProps } from '.'
 
-export const ProfileStyle = styled.article`
-    color: #fff;
-    border-radius: 0.5rem;
-    width: 20rem;
-    background-color: hsla(0,0%,0%,0.8);
-    margin: 1rem;
+export const HeaderWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
 `
 
-export const ProfileImage = styled.img`
+type showAsType = Pick<ProfileHeaderProps, 'showAs'>
+
+export const ProfileImage = styled.img<showAsType>`
     width: 100%;
     height: 14rem;
-    border-radius: 0.5rem 0.5rem 0 0;
+    border-radius: ${({ showAs }) => showAs === 'card' ? '0.5rem 0.5rem 0 0' : '0'};
+    order: ${({ showAs }) => showAs === 'card' ? '1' : '2'};
 `
 
-export const InfoSectionStyle = styled.div`
+export const InfoSectionStyle = styled.div<showAsType>`
     padding: 1rem;
+    order: ${({ showAs }) => showAs === 'card' ? '2' : '1'};
 `
 
 export const TitleStyle = styled.h2`
@@ -27,8 +28,7 @@ export const TitleStyle = styled.h2`
 export const SubtitleStyle = styled.h4`
     margin: 0;
 `
-
-type StatusProps = Pick<ProfileProps, 'status'>
+type StatusProps = Pick<ProfileHeaderProps, 'status'>
 
 export const StatusIndicatorStyle = styled.span<StatusProps>`
     height: 0.6rem;
@@ -40,8 +40,4 @@ export const StatusIndicatorStyle = styled.span<StatusProps>`
         if (status === 'Dead') return css`red;`
         if (status === 'unknown') return css`yellow;`
     }}
-`
-
-export const LocationSectionStyle = styled.div`
-    padding: 1rem;
 `

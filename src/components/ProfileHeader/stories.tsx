@@ -1,12 +1,12 @@
 import { Story, Meta } from '@storybook/react'
-import Profile, { ProfileProps } from '.'
+import ProfileHeader, { ProfileHeaderProps } from '.'
 
 export default {
-    title: 'Profile',
-    component: Profile
+    title: 'ProfileHeader',
+    component: ProfileHeader
 } as Meta
 
-const Template: Story<ProfileProps> = (args: ProfileProps) => <Profile {...args} />
+const Template: Story<ProfileHeaderProps> = (args: ProfileHeaderProps) => <ProfileHeader {...args} />
 
 export const Default = Template.bind({})
 Default.args = {
@@ -14,7 +14,5 @@ Default.args = {
     name: 'Rick and Morry',
     status: 'Dead',
     species: 'Alien',
-    origin: 'Earth',
-    location: 'Gaia',
-    numberOfEpisodes: 13
+    showAs: 'card'
 }
