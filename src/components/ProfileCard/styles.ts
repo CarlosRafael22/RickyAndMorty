@@ -16,6 +16,12 @@ export const TitleStyle = styled.h2`
 
 export const SubtitleStyle = styled.h4`
     margin: 0;
+    color: rgb(158, 158, 158);
+`
+
+export const LocationNameStyle = styled.p`
+    font-size: 1.2rem;
+    margin: 0.2rem;
 `
 
 export const InfoSectionStyle = styled.div`
@@ -23,5 +29,10 @@ export const InfoSectionStyle = styled.div`
 `
 
 export const LocationSectionStyle = styled.div`
-    padding: 1rem;
+    margin: 0.5rem 1rem;
+    flex: 1 1 0%;
+    display: flex;
+    flex-direction: column;
+    -moz-box-pack: center;
+    justify-content: center;
 `

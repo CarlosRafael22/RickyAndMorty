@@ -21,4 +21,5 @@ export const LocationInfo = styled.p`
 
 export const InfoSpan = styled.span`
     font-weight: 600;
+    color: rgb(158, 158, 158);
 `

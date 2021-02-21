@@ -1,4 +1,4 @@
-import { EpisodesSectionStyle, EpisodesHeader, EpisodesInfoSectionStyle, EpisodeInfo, EpisodeName, EpisodeContainer, InfoSpan } from './styles'
+import { EpisodesSectionStyle, EpisodesHeader, EpisodesInfoSectionStyle, EpisodeInfo, EpisodeName, EpisodeContainer, InfoSpan, HeaderSpan } from './styles'
 
 export type Episode = {
     name: string,
@@ -24,7 +24,7 @@ const EpisodesSection = ({ episodes }: EpisodesSectionProps) => {
 
     return (
         <EpisodesSectionStyle>
-            <EpisodesHeader>Episodes</EpisodesHeader>
+            <EpisodesHeader>Episodes - <HeaderSpan>{`${episodes.length} in total`}</HeaderSpan></EpisodesHeader>
             <EpisodesInfoSectionStyle>
                 {episodes.map((episode, index) => (
                     <Episode {...episode} key={`episode_${index}`} />
