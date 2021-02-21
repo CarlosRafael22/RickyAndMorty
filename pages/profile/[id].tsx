@@ -9,7 +9,7 @@ const requestLocationAndSaveState = async (title: string, saveOnState: Function,
         console.log(parsedLocation)
         saveOnState({...parsedLocation, title})
     } else {
-        saveOnState({ title, name: 'unknown', type: 'unknown', dimension: 'unknown', residents: 0})
+        saveOnState({ title, name: 'unknown', type: 'unknown', dimension: 'unknown', numberOfResidents: 'unknown'})
     }
 }
 
@@ -49,8 +49,8 @@ const Page = () => {
           if (originUrl === locationUrl) {
             const parsedOrigin = await requestParsedLocation(originUrl)
             console.log(parsedOrigin)
-            setOrigin(parsedOrigin)
-            setLocation(parsedOrigin)
+            setOrigin({...parsedOrigin, title: 'Origin'})
+            setLocation({...parsedOrigin, title: 'Location'})
           } else {
             await requestLocationAndSaveState('Origin', setOrigin, originUrl)
             await requestLocationAndSaveState('Location', setLocation, locationUrl)
